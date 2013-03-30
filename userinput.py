@@ -35,6 +35,7 @@ def add_game():
     genre = raw_input("Enter game genre: ")
     url = raw_input("Enter game URL: ")
 
-    newgame = Game(title, developers, publishers, release_date, platforms, technologies, genre, dev_time, distribution, url, game_category)
+    newgame = Game(title, developers, publishers, release_date, platforms, technologies, genre,
+                   dev_time, distribution, url, game_category)
 
     return newgame
