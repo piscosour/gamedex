@@ -11,7 +11,8 @@ platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
                  "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga"]
 distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web"]
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
-                   "Cloud Computing"]
+                   "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
+game_cat_list = ["Mobile", "Console", "Casual", "Text", "Web", "ARG", "Mod", "Hack"]
 
 
 class Game:
@@ -19,8 +20,8 @@ class Game:
     """A game in the Gamedex."""
 
     def __init__(self, title, developer=None, publisher=None, release_date=None,
-                 platforms=None, technologies=None, genre=None, build_time=None,
-                 distribution=None, url=None):
+                 platforms=None, technologies=None, genre=None, dev_time=None,
+                 distribution=None, url=None, game_category=None):
         self.title = title
         if developer is not None:
             self.developer = []
@@ -32,10 +33,15 @@ class Game:
         if platforms is not None:
             self.platforms = []
             self.add_platform(platforms)
-        self.technologies = technologies
+        if technologies is not None:
+            self.technologies = []
+            self.add_technologies(technologies)
         self.genre = genre
-        self.build_time = build_time
+        self.dev_time = dev_time 
         self.distribution = distribution
+        if game_category is not None:
+            self.game_category = []
+            self.add_game_cat(game_category)
         self.url = url
 
     ## These functions are called independently so they can also be used to update content outside of init.
@@ -67,6 +73,33 @@ class Game:
             else:
                 raise ValueError("Platform not on platforms list.")
 
+    def add_technologies(self, technologies):
+        if technologies is None:
+            raise ValueError("No technology specified.")
+        elif self.technologies is None:
+            self.technologies = []
+        for element in technologies.split(","):
+            if element in technology_list:
+                self.technologies = self.technologies + [element]
+            else:
+                raise ValueError("Technology not on technologies list.")
+
+    def add_game_cat(self, game_category):
+        if game_category is None:
+            raise ValueError("No category specified.")
+        elif self.game_category is None:
+            self.game_category = []
+        for element in game_category.split(","):
+            if element in game_cat_list:
+                self.game_category = self.game_category + [element]
+            else:
+                raise ValueError("Category not on categories list.")
+
+
+## Using developer class for both developers and publishers. Maybe rename to Org?
+
+## Also - add class for individuals, for detailed team lists working on games?
+            
 class Developer:
 
     """A developer or publisher of a game."""
