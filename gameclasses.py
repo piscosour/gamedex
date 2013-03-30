@@ -8,7 +8,8 @@
 
 
 platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
-                 "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga"]
+                 "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga",
+                 "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast"]
 distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web"]
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
                    "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
