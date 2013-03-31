@@ -6,7 +6,7 @@ gamelist = [
 
     ## First section corresponding to the TEG archive.
     
-    Game(title="Gunbee F-99: The Kidnapping of Lady Akiko",
+    Game(title ="Gunbee F-99: The Kidnapping of Lady Akiko",
          developer = "Twin Eagles Group",
          publisher = "APC&TCP",
          release_date = "1999",
@@ -172,8 +172,20 @@ gamelist = [
          dev_time = None,
          distribution = "Freeware",
          url = "http://www.tegperu.org/teg2000/dogdaze/default.asp",
-         game_category = "Remake,Noncommercial")
+         game_category = "Remake,Noncommercial"),
 
     ## End section corresponding to TEG archive.
+
+    Game(title = "Crazy Combi",
+         developer = "Inventarte.net",
+         publisher = None,
+         release_date = "2009-6-24",
+         platforms = "Facebook",
+         technologies = "Flash",
+         genre = "Arcade",
+         dev_time = None,
+         distribution = "Social",
+         url = "https://apps.facebook.com/crazycombi/",
+         game_category = "Social,Casual")
     
     ]
