@@ -4,6 +4,8 @@ from gameclasses import Developer
 
 gamelist = [
 
+    ## First section corresponding to the TEG archive.
+    
     Game(title="Gunbee F-99: The Kidnapping of Lady Akiko",
          developer = "Twin Eagles Group",
          publisher = "APC&TCP",
@@ -136,6 +138,18 @@ gamelist = [
          url = None,
          game_category = "Localized,Noncommercial"),
 
+    Game(title = "The King of Peru 2001",
+         developer = "Twin Eagles Group",
+         publisher = None,
+         release_date = "2001-5-22",
+         platforms = "Windows,PC",
+         technologies = "C/C++",
+         genre = "Fighting",
+         dev_time = None,
+         distribution = "Freeware",
+         url = "http://www.tegperu.org/teg2000/kop2k1/kop2k1.asp",
+         game_category = "Noncommercial"),
+    
     Game(title = "Frogger Mambo",
          developer = "Twin Eagles Group",
          publisher = None,
@@ -158,6 +172,8 @@ gamelist = [
          dev_time = None,
          distribution = "Freeware",
          url = "http://www.tegperu.org/teg2000/dogdaze/default.asp",
-         game_category = "Remake,Noncommercial"),
+         game_category = "Remake,Noncommercial")
+
+    ## End section corresponding to TEG archive.
     
     ]
