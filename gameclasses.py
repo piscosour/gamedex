@@ -15,7 +15,8 @@ distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Xbox Live", "
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
                    "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
 game_cat_list = ["Mobile", "Console", "Casual", "Text", "Web", "ARG", "Mod", "Hack", "Commercial",
-                 "Advergame", "Newsgame", "Serious", "Learning", "Conversion", "Noncommercial"]
+                 "Advergame", "Newsgame", "Serious", "Learning", "Conversion", "Noncommercial",
+                 "Localized", "Remake"]
 
 
 class Game:
