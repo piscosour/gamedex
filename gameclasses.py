@@ -8,14 +8,10 @@
 
 platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
                  "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga",
-<<<<<<< HEAD
-                 "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast"]
-distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Xbox Live", "Playstation Network"]
-=======
                  "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast",
                  "Windows", "Atari 2600"]
-distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Freeware"]
->>>>>>> Updated platform and categories list, plus new gamelist file with test static data.
+distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Xbox Live", "Playstation Network",
+                     "Freeware"]
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
                    "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
 game_cat_list = ["Mobile", "Console", "Casual", "Text", "Web", "ARG", "Mod", "Hack", "Commercial",
