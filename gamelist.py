@@ -1,3 +1,5 @@
+# coding=utf-8
+
 import gameclasses
 from gameclasses import Game
 from gameclasses import Developer
@@ -6,7 +8,7 @@ gamelist = [
 
     ## First section corresponding to the TEG archive.
     
-    Game(title ="Gunbee F-99: The Kidnapping of Lady Akiko",
+    Game(title = "Gunbee F-99: The Kidnapping of Lady Akiko",
          developer = "Twin Eagles Group",
          publisher = "APC&TCP",
          release_date = "1999",
@@ -186,6 +188,18 @@ gamelist = [
          dev_time = None,
          distribution = "Social",
          url = "https://apps.facebook.com/crazycombi/",
-         game_category = "Social,Casual")
-    
-    ]
+         game_category = "Social,Casual"),
+
+    Game(title = "1814: La Rebelión del Cusco",
+         developer = "Grupo Avatar PUCP",
+         publisher = None,
+         release_date = "2012",
+         platforms = None,
+         technologies = None,
+         genre = None,
+         dev_time = None,
+         distribution = None,
+         url = None,
+         game_category = "Learning")    
+
+]
