@@ -2,7 +2,7 @@
 
 import gameclasses
 from gameclasses import Game
-from gameclasses import Developer
+from gameclasses import Org
 
 gamelist = [
 

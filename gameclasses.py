@@ -52,11 +52,11 @@ class Game:
     
     def add_dev(self, developer):
         if developer is None:                   ## Are you giving me something?
-            raise ValueError("No developer specified.")
+            raise ValueError("No Org specified.")
         elif self.developer is None:            ## Do I have something?
             self.developer = []
         for element in developer.split(","):    ## Parse and add yours to mine.
-            self.developer = self.developer + [Developer(element)]
+            self.developer = self.developer + [Org(element)]
 
     def add_pub(self, publisher):
         if publisher is None:
@@ -64,7 +64,7 @@ class Game:
         elif self.publisher is None:
             self.publisher = []
         for element in publisher.split(","):
-            self.publisher = self.publisher + [Developer(element)]
+            self.publisher = self.publisher + [Org(element)]
 
     def add_platform(self, platforms):
         if platforms is None:
@@ -100,13 +100,13 @@ class Game:
                 raise ValueError("Category not on categories list.")
 
 
-## Using developer class for both developers and publishers. Maybe rename to Org?
+## Using Org class for both Orgs and publishers. Maybe rename to Org?
 
 ## Also - add class for individuals, for detailed team lists working on games?
             
-class Developer:
+class Org:
 
-    """A developer or publisher of a game."""
+    """A Org or publisher of a game."""
 
     def __init__(self, name, start_date=None, size=None, location=None,
                  end_date=None, url=None, email=None):
