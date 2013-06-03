@@ -1,6 +1,6 @@
 from gameclasses import Game
 from gameclasses import Org
-from gamelist import gamelist
+from gamelist import gamedata
 
 ## List all the games in the Gamedex, with devs and year.
 

@@ -4,7 +4,7 @@ import gameclasses
 from gameclasses import Game
 from gameclasses import Org
 
-gamelist = [
+gamedata = [
 
     ## First section corresponding to the TEG archive.
     
