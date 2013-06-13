@@ -16,8 +16,7 @@ def hello_world():
     
 @app.route("/gamelist")
 def game_list(data=gamedata):
-    operations.game_index(data)
-    return True
+    return operations.game_index(data)
 
 if __name__ == "__main__":
     app.debug = True
