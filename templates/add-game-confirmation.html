@@ -4,7 +4,22 @@
 </head>
 
 <body>
-<h1>Success!</h1>
-<h2>{{ title }}</h2>
+<h1>{{ game.title }} added to database!</h1>
+<p>Developer: {% for org in game.developer %}
+                  {{ org.name }}
+              {% endfor %}</p>
+<p>Publisher: {% for org in game.publisher %}
+                  {{ org.name }}
+              {% endfor %}</p>
+<p>Release Date: {{ game.release_date }}</p>
+<p>Platform(s): {{ game.platforms }}</p>
+<p>Technology(ies): {{ game.technologies }}</p>
+<p>Genre: {{ game.genre }}</p>
+<p>Development Time: {{ game.dev_time }}</p>
+<p>Distribution: {{ game.distribution }}</p>
+<p>URL: {{ game.url }}</p>
+<p>Category: {{ game.category }}</p>
+<br />
+<p><a href="/gamelist">Return to Game List</a></p>
 </body>
 </html>
