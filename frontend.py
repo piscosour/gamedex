@@ -41,7 +41,10 @@ def show_game(game_id):
 def add_game():
     global gamedata
     if request.method == "GET":
-        return render_template("addgame.html")
+        return render_template("addgame.html", techs=gameclasses.technology_list, 
+                               platforms=gameclasses.platform_list,
+                               categories=gameclasses.game_cat_list,
+                               dist_options=gameclasses.distribution_list)
     elif request.method == "POST":
         new_game = gameclasses.Game(id = len(gamedata) + 1, 
                                     title = request.form["title"],
