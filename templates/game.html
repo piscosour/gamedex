@@ -23,11 +23,15 @@
     </tr>
     <tr>
         <td>Platform(s)</td>
-        <td>{{ selection.platforms }}</td>
+        <td>{% for platform in selection.platforms %}
+                {{ platform }}<br />
+            {% endfor %}</td>
     </tr>
     <tr>
         <td>Technologies</td>
-        <td>{{ selection.technologies }}</td>
+        <td>{% for technology in selection.technologies %}
+                {{ technology }}<br />
+            {% endfor %}</td>
     </tr>
     <tr>
         <td>Genre</td>
@@ -35,7 +39,11 @@
     </tr>
     <tr>
         <td>Development Time</td>
-        <td>{{ selection.dev_time }} months</td>
+        <td>{% if selection.dev_time == None %}
+                N/A
+            {% else %}
+                {{ selection.dev_time }} months
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Distribution</td>
@@ -43,11 +51,21 @@
     </tr>
     <tr>
         <td>URL</td>
-        <td><a href="{{ selection.url }}">{{ selection.url }}</td>
+        <td>{% if selection.url == None %}
+                N/A
+            {% else %}
+            <a href="{{ selection.url }}">{{ selection.url }}</a>
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Category</td>
-        <td>{{ selection.game_category }}</td>
+        <td>{% if selection.game_category == None %}
+                N/A
+            {% else %}
+                {% for category in selection.game_category %}
+                    {{ category }}<br />
+                {% endfor %}</a>
+            {% endif %}</td>
     </tr>
 </table>
 
