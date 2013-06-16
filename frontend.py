@@ -5,6 +5,7 @@
 
 from flask import Flask
 from flask import render_template
+from flask import request
 import gameclasses
 from gamelist import gamedata
 import operations
@@ -34,9 +35,13 @@ def show_game(game_id, data=gamedata):
 
 ## Add game form
 
-@app.route("/addgame")
-def add_game():
-    return render_template("addgame.html")
+@app.route("/addgame", methods=["GET", "POST"])
+def add_game(data=gamedata):
+    if request.method == "GET":
+        return render_template("addgame.html")
+    elif request.method == "POST":
+        data = data + [Game(request.form["title"], request.form["developer"], request.form["publisher"], request.form["release_date"], request.form["platforms"], request.form["technologies"], request.form["genre", request.form["dev_time"], request.form["distribution"], request.form["url"], request.form["category"])]
+        return render_template("add-game-confirmation.html", title=request.form["title"])
 
 
 if __name__ == "__main__":
