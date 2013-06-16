@@ -22,7 +22,7 @@ def show_game_list():
     gen_game_data = operations.gen_game_index()
     return render_template("gamelist.html", game_data=gen_game_data)
 
-## Placeholder for individual game info render.
+## Individual game info render.
 
 @app.route("/game/<int:game_id>")
 def show_game(game_id, data=gamedata):
@@ -31,6 +31,13 @@ def show_game(game_id, data=gamedata):
             return render_template("game.html", selection=game)
     else:
         return False
+
+## Add game form
+
+@app.route("/addgame")
+def add_game():
+    return render_template("addgame.html")
+
 
 if __name__ == "__main__":
     app.debug = True

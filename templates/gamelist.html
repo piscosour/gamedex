@@ -4,12 +4,12 @@
 </head>
 
 <body>
-<p>Render success!</p>
+<h1>Game List</h1>
 <ul>
 {% for game in game_data %}
     <li><a href="/game/{{ game.id }}">{{ (game.title) }}</a></li>
 {% endfor %}
 </ul>
-
+<p><a href="/addgame">Add game</a></p>
 </body>
 </html>
