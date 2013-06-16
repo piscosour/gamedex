@@ -9,7 +9,7 @@ from gamelist import gamedata
 def gen_game_index(data=gamedata):
     game_index = []
     for game in data:
-        game_index = game_index + [game.title]
+        game_index = game_index + [game]
     
     return game_index
 

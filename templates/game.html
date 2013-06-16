@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Game Info: {{selection.title }}</title>
+</head>
+
+<body>
+<h1>{{ selection.title }}</h1>
+<table>
+    <tr>
+        <td>Developer</td>
+        <td>{% for org in selection.developer %}
+                {{ org.name }}
+            {% endfor %}</td>
+    </tr>
+    <tr>
+        <td>Publisher</td>
+        <td>{% for org in selection.publisher %}
+                {{ org.name }}
+            {% endfor %}</td>    </tr>
+    <tr>
+        <td>Release Date</td>
+        <td>{{ selection.release_date }}</td>
+    </tr>
+    <tr>
+        <td>Platform(s)</td>
+        <td>{{ selection.platforms }}</td>
+    </tr>
+    <tr>
+        <td>Technologies</td>
+        <td>{{ selection.technologies }}</td>
+    </tr>
+    <tr>
+        <td>Genre</td>
+        <td>{{ selection.genre }}</td>
+    </tr>
+    <tr>
+        <td>Development Time</td>
+        <td>{{ selection.dev_time }} months</td>
+    </tr>
+    <tr>
+        <td>Distribution</td>
+        <td>{{ selection.distribution }}</td>
+    </tr>
+    <tr>
+        <td>URL</td>
+        <td><a href="{{ selection.url }}">{{ selection.url }}</td>
+    </tr>
+    <tr>
+        <td>Category</td>
+        <td>{{ selection.game_category }}</td>
+    </tr>
+</table
+</body>
+</html>
+

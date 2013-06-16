@@ -25,9 +25,10 @@ class Game:
 
     """A game in the Gamedex."""
 
-    def __init__(self, title, developer=None, publisher=None, release_date=None,
+    def __init__(self, id, title, developer=None, publisher=None, release_date=None,
                  platforms=None, technologies=None, genre=None, dev_time=None,
                  distribution=None, url=None, game_category=None):
+        self.id = id
         self.title = title
         if developer is not None:
             self.developer = []

@@ -7,7 +7,7 @@
 <p>Render success!</p>
 <ul>
 {% for game in game_data %}
-    <li>{{ (game) }}</li>
+    <li><a href="/game/{{ game.id }}">{{ (game.title) }}</a></li>
 {% endfor %}
 </ul>
 

@@ -25,8 +25,12 @@ def show_game_list():
 ## Placeholder for individual game info render.
 
 @app.route("/game/<int:game_id>")
-def show_game(game_id):
-    return game_id
+def show_game(game_id, data=gamedata):
+    for game in data:
+        if game_id == game.id:
+            return render_template("game.html", selection=game)
+    else:
+        return False
 
 if __name__ == "__main__":
     app.debug = True
