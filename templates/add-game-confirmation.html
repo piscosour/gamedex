@@ -5,6 +5,7 @@
 
 <body>
 <h1>{{ game.title }} added to database!</h1>
+
 <p>Developer: {% for org in game.developer %}
                   {{ org.name }}
               {% endfor %}</p>
@@ -20,6 +21,7 @@
 <p>URL: {{ game.url }}</p>
 <p>Category: {{ game.category }}</p>
 <br />
+
 <p><a href="/gamelist">Return to Game List</a></p>
 </body>
 </html>

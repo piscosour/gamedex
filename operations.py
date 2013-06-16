@@ -6,12 +6,16 @@ from gamelist import gamedata
 
 ## List all the games in the Gamedex, with devs and year.
 
+## Return list of Game objects
+
 def gen_game_index(data=gamedata):
     game_index = []
     for game in data:
         game_index = game_index + [game]
     
     return game_index
+
+## Print game indexto screen
 
 def render_game_index(data):
     for game in data:

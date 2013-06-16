@@ -12,9 +12,11 @@ import operations
 
 app = Flask(__name__)
 
+## Front Page
+
 @app.route("/")
-def hello_world():
-    return "Hello world!"
+def show_front():
+    return render_template("index.html")
 
 ## Render the full list of games in the DB. Requires templating to iterate.
 
