@@ -8,7 +8,8 @@ gamedata = [
 
     ## First section corresponding to the TEG archive.
     
-    Game(title = "Gunbee F-99: The Kidnapping of Lady Akiko",
+    Game(id = 1,
+         title = "Gunbee F-99: The Kidnapping of Lady Akiko",
          developer = "Twin Eagles Group",
          publisher = "APC&TCP",
          release_date = "1999",
@@ -20,7 +21,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg1995/gunbee/gunbee.htm",
          game_category = "Commercial"),
 
-    Game(title = "The King of Peru 2: The Final Mecha",
+    Game(id = 2,
+         title = "The King of Peru 2: The Final Mecha",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2001-12-13",
@@ -32,7 +34,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/kop2/index.asp",
          game_category = "Commercial"),
 
-    Game(title = "Samba de Oruga",
+    Game(id = 3,
+         title = "Samba de Oruga",
          developer = "Twin Eagles Group",
          publisher = "Twin Eagles Group",
          release_date = "2003",
@@ -44,7 +47,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/sambadeoruga/index.asp",
          game_category = "Commercial"),
 
-    Game(title = "Aventuras D'Onofrio",
+    Game(id = 4,
+         title = "Aventuras D'Onofrio",
          developer = "SISTAP,Harley O'Brien",
          publisher = None,
          release_date = "1989",
@@ -56,7 +60,8 @@ gamedata = [
          url = None,
          game_category = "Advergame"),
 
-    Game(title = "Varidiam ED-109",
+    Game(id = 5,
+         title = "Varidiam ED-109",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "1997",
@@ -68,7 +73,8 @@ gamedata = [
          url = None,
          game_category = "Hack,Conversion"),
 
-    Game(title = "Amibee",
+    Game(id = 6,
+         title = "Amibee",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "1997",
@@ -80,7 +86,8 @@ gamedata = [
          url = None,
          game_category = "Hack,Conversion"),
 
-    Game(title = "La Tercera Vuelta",
+    Game(id = 7,
+         title = "La Tercera Vuelta",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2000-5-12",
@@ -92,7 +99,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/3vuelta/default.asp",
          game_category = "Noncommercial"),
 
-    Game(title = "Sokobug",
+    Game(id = 8,
+         title = "Sokobug",
          developer = "Bugtronix",
          publisher = None,
          release_date = "2000",
@@ -104,7 +112,8 @@ gamedata = [
          url = None,
          game_category = "Noncommercial"),
 
-    Game(title = "Sokobug 2",
+    Game(id = 9,
+         title = "Sokobug 2",
          developer = "Bugtronix",
          publisher = None,
          release_date = "2000",
@@ -116,7 +125,8 @@ gamedata = [
          url = None,
          game_category = "Noncommercial"),
 
-    Game(title = "El Gato Volador",
+    Game(id = 10,
+         title = "El Gato Volador",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2001-2-8",
@@ -128,7 +138,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/gato/gato.htm",
          game_category = "Noncommercial"),
 
-    Game(title = "Snakes",
+    Game(id = 11,
+         title = "Snakes",
          developer = "JLDL Software",
          publisher = None,
          release_date = "2001-2-8",
@@ -140,7 +151,8 @@ gamedata = [
          url = None,
          game_category = "Localized,Noncommercial"),
 
-    Game(title = "The King of Peru 2001",
+    Game(id = 12,
+         title = "The King of Peru 2001",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2001-5-22",
@@ -152,7 +164,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/kop2k1/kop2k1.asp",
          game_category = "Noncommercial"),
     
-    Game(title = "Frogger Mambo",
+    Game(id = 13,
+         title = "Frogger Mambo",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2003",
@@ -164,7 +177,8 @@ gamedata = [
          url = "http://www.tegperu.org/teg2000/frogger/default.asp",
          game_category = "Noncommercial"),
 
-    Game(title = "Dog Daze Revolution",
+    Game(id = 14,
+         title = "Dog Daze Revolution",
          developer = "Twin Eagles Group",
          publisher = None,
          release_date = "2004-4-1",
@@ -178,7 +192,8 @@ gamedata = [
 
     ## End section corresponding to TEG archive.
 
-    Game(title = "Crazy Combi",
+    Game(id = 15,
+         title = "Crazy Combi",
          developer = "Inventarte.net",
          publisher = None,
          release_date = "2009-6-24",
@@ -190,7 +205,8 @@ gamedata = [
          url = "https://apps.facebook.com/crazycombi/",
          game_category = "Social,Casual"),
 
-    Game(title = "1814: La Rebelión del Cusco",
+    Game(id = 16,
+         title = "1814: La Rebelion del Cusco",
          developer = "Grupo Avatar PUCP",
          publisher = None,
          release_date = "2012",

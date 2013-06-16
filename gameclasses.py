@@ -1,3 +1,5 @@
+# coding=utf-8
+
 ## These lists are not comprehensive. Maybe they shouldn't be and can be machine generated based on
 ## user input? Not useful for a web interface, though, unless it's a free text field.
 

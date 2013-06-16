@@ -1,10 +1,19 @@
+# coding=utf-8
+
 from gameclasses import Game
 from gameclasses import Org
 from gamelist import gamedata
 
 ## List all the games in the Gamedex, with devs and year.
 
-def game_index(data):
+def gen_game_index(data=gamedata):
+    game_index = []
+    for game in data:
+        game_index = game_index + [game.title]
+    
+    return game_index
+
+def render_game_index(data):
     for game in data:
         print game.title, "(",
         for developer in game.developer:
