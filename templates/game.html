@@ -1,9 +1,6 @@
-<html>
-<head>
-    <title>Game Info: {{selection.title }}</title>
-</head>
-
-<body>
+{% extends "base.html" %}
+{% block title %}Game Info: {{selection.title }}{% endblock title %}
+{% block content %}
 <h1>{{ selection.title }}</h1>
 <div name="game-info"><table>
     <tr>
@@ -93,7 +90,4 @@
         </div>
 </div>
 <p><a href="/gamelist">Return to Game Index</a></p>
-
-</body>
-</html>
-
+{% endblock content %}

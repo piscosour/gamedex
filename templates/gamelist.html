@@ -1,10 +1,7 @@
-<html>
-<head>
-<title>Game Index</title>
-</head>
-
-<body>
-<h1>Game List</h1>
+{% extends "base.html" %}
+{% block title %}Game Index{% endblock title %}
+{% block content %}
+<h1>Game Index</h1>
 <p>Sort: A-Z | Date</p>
 <ul>
 {% for game in game_data %}
@@ -13,5 +10,4 @@
 </ul>
 <p>{{ total }} total games in the index.</p>
 <p><a href="/addgame">Add Game to Index</a></p>
-</body>
-</html>
+{% endblock content %}

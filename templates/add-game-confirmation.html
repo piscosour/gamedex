@@ -1,9 +1,6 @@
-<html>
-<head>
-<title>Success!</title>
-</head>
-
-<body>
+{% extends "base.html" %}
+{% block title %}Success!{% endblock title %}
+{% block content %}
 <h1>{{ game.title }} added to database!</h1>
 
 <p>Developer: {% for org in game.developer %}
@@ -23,5 +20,4 @@
 <br />
 
 <p><a href="/gamelist">Return to Game List</a></p>
-</body>
-</html>
+{% endblock content %}

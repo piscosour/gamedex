@@ -1,11 +1,8 @@
-<html>
-<head>
-<title>GameDex</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block title %}GameDex{% endblock title %}
+{% block content %}
 <h1>GameDex</h1>
 <p><a href="/gamelist">Game Index</a></p>
 <p><a href="/addgame">Add Game to Index</a></p>
 <p><a href="https://github.com/piscosour/gamedex">View source on GitHub</a></p>
-</body>
-</html>
+{% endblock content %}
