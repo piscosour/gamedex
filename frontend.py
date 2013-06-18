@@ -104,6 +104,9 @@ def add_game():
         gamedata = gamedata + [new_game]
         return render_template("add-game-confirmation.html", game=new_game)
 
+@app.route("/about")
+def about_page():
+    return render_template("about.html")
 
 if __name__ == "__main__":
     app.debug = True
