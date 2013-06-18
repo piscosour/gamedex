@@ -7,6 +7,7 @@
 
 ## Also - think about turning them into dictionaries of key:value pairs.
 
+import datetime
 
 platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
                  "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga",
@@ -140,7 +141,16 @@ class Org:
             self.status = "Active"
         else:
             self.status = "Inactive"
-            
-        
 
+## For adding ongoing notes to either Games or Orgs, with title, body and timestamp.
+
+class Note:
+
+    """A Note with additional text information."""
+    
+    def __init__(self, body, title=None):
+        self.title = title
+        self.body = body
+        self.timestamp = datetime.datetime.now()
+        self.timestamp_str = str(self.timestamp)
     

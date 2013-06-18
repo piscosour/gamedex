@@ -46,7 +46,9 @@ def addnote(game_id):
     if request.method == "POST":
         for game in gamedata:
             if game_id == game.id:
-                game.notes = game.notes + [request.form["note-text"]]
+                new_note = gameclasses.Note(body = request.form["note-body"],
+                                            title = request.form["note-title"])
+                game.notes = game.notes + [new_note]
                 return render_template("game.html", selection=game, notes=True)
 
 ## Add game form
