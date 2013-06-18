@@ -24,7 +24,7 @@ def show_front():
 def show_game_list():
     global gamedata
     gen_game_data = operations.gen_game_index(gamedata)
-    return render_template("gamelist.html", game_data=gen_game_data)
+    return render_template("gamelist.html", game_data=gen_game_data, total=len(gamedata))
 
 ## Individual game info render.
 

@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Game List</title>
+<title>Game Index</title>
 </head>
 
 <body>
@@ -11,6 +11,7 @@
     <li><a href="/game/{{ game.id }}">{{ (game.title) }}</a> ({{ game.release_date[:4] }})</li>
 {% endfor %}
 </ul>
+<p>{{ total }} total games in the index.</p>
 <p><a href="/addgame">Add Game to Index</a></p>
 </body>
 </html>

@@ -21,7 +21,7 @@
                     {% endfor %}</select></p>
 <p>Genre: <input type="text" name="genre"></p>
 <p>Development Time: <input type="text" name="dev_time"></p>
-<p>Distribution: <select name="distribution">
+<p>Distribution: <select size="5" multiple="yes" name="distribution">
                  {% for dist in dist_options %}
                      <option value="{{ dist }}">{{ dist }}</options></p>
                  {% endfor %}</select></p>

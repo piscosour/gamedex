@@ -45,11 +45,14 @@ class Game:
             self.add_technologies(technologies)
         self.genre = genre
         self.dev_time = dev_time 
-        self.distribution = distribution
+        if distribution is not None:
+            self.distribution = []
+            self.add_game_dist(distribution)
         if game_category is not None:
             self.game_category = []
             self.add_game_cat(game_category)
         self.url = url
+        self.notes = []
 
     ## These functions are called independently so they can also be used to update content outside of init.
     
@@ -102,6 +105,16 @@ class Game:
             else:
                 raise ValueError("Category not on categories list.")
 
+    def add_game_dist(self, dist_method):
+        if dist_method is None:
+            raise ValueError("No distribution method specified.")
+        elif self.distribution is None:
+            self.distribution = []
+        for element in dist_method.split(","):
+            if element in distribution_list:
+                self.distribution = self.distribution + [element]
+            else:
+                raise ValueError("Distribution method not on methods list.")
 
 ## Using Org class for both Orgs and publishers. Maybe rename to Org?
 
