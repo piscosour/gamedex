@@ -79,7 +79,13 @@
     <h2>Notes</h2>
     {% if notes == True %}
         {% for note in selection.notes %}
-            <p><strong>{{ note.title + ". " }}</strong>{{ note.body }} ({{ note.timestamp_str }})</p>
+            <div class="note">
+                <table class="table table-bordered table-condensed">
+                    {% if note.title|length > 0 %}<tr><th><h4>{{ note.title }}</h4></th></tr>{% endif %}
+                    <tr><td><p>{{ note.body }}</p></td></tr>
+                    <tr><td><small>{{ note.timestamp_str }}</small></td></tr>
+                </table>
+            </div>
         {% endfor %}
     {% else %}
         <p>There are no notes for this game.</p>
@@ -90,7 +96,7 @@
             <legend>Add Note</legend>
             <label>Title</label>
             <input type="text" name="note-title"></p>
-            <labelNote</label>
+            <label>Note</label>
             <textarea rows="5" name="note-body"></textarea></p>
             <button type="submit" class="btn btn-small">Add Note</button>
         </form>

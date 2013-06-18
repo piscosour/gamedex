@@ -9,6 +9,7 @@ from flask import request
 
 import gameclasses
 import operations
+import users
 from gamelist import gamedata
 
 ## Initialise Flask app
@@ -20,6 +21,19 @@ app = Flask(__name__)
 @app.route("/")
 def show_front():
     return render_template("index.html")
+
+@app.route("/login", methods=["POST"])
+def login():
+    if request.method == "POST":
+        if request.form["user"] in users.user_list:
+            if request.form["password"]  == users.user_list[request.form["user"]]:
+                user_authenticate = True
+                return "Login successful!"
+            else:
+                return "Password incorrect."
+        else:
+            return "User not in database."
+            
 
 ## Render the full list of games in the DB. Requires templating to iterate.
 
