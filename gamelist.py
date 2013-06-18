@@ -10,8 +10,8 @@ gamedata = [
     
     Game(id = 1,
          title = "Gunbee F-99: The Kidnapping of Lady Akiko",
-         developer = "Twin Eagles Group",
-         publisher = "APC&TCP",
+         developer = [2],
+         publisher = [8],
          release_date = "1999",
          platforms = "Amiga",
          technologies = None,
@@ -23,7 +23,7 @@ gamedata = [
 
     Game(id = 2,
          title = "The King of Peru 2: The Final Mecha",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2001-12-13",
          platforms = "Windows,PC",
@@ -36,8 +36,8 @@ gamedata = [
 
     Game(id = 3,
          title = "Samba de Oruga",
-         developer = "Twin Eagles Group",
-         publisher = "Twin Eagles Group",
+         developer = [2],
+         publisher = [2],
          release_date = "2003",
          platforms = "Windows,PC",
          technologies = None,
@@ -49,7 +49,7 @@ gamedata = [
 
     Game(id = 4,
          title = "Aventuras D'Onofrio",
-         developer = "SISTAP,Harley O'Brien",
+         developer = [9],
          publisher = None,
          release_date = "1989",
          platforms = "Atari 2600",
@@ -62,7 +62,7 @@ gamedata = [
 
     Game(id = 5,
          title = "Varidiam ED-109",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "1997",
          platforms = "Amiga",
@@ -75,7 +75,7 @@ gamedata = [
 
     Game(id = 6,
          title = "Amibee",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "1997",
          platforms = "Amiga",
@@ -88,7 +88,7 @@ gamedata = [
 
     Game(id = 7,
          title = "La Tercera Vuelta",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2000-5-12",
          platforms = "Windows,PC",
@@ -101,7 +101,7 @@ gamedata = [
 
     Game(id = 8,
          title = "Sokobug",
-         developer = "Bugtronix",
+         developer = [3],
          publisher = None,
          release_date = "2000",
          platforms = "Windows,PC",
@@ -114,7 +114,7 @@ gamedata = [
 
     Game(id = 9,
          title = "Sokobug 2",
-         developer = "Bugtronix",
+         developer = [3],
          publisher = None,
          release_date = "2000",
          platforms = "Windows,PC",
@@ -127,7 +127,7 @@ gamedata = [
 
     Game(id = 10,
          title = "El Gato Volador",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2001-2-8",
          platforms = "Windows,PC",
@@ -140,7 +140,7 @@ gamedata = [
 
     Game(id = 11,
          title = "Snakes",
-         developer = "JLDL Software",
+         developer = [4],
          publisher = None,
          release_date = "2001-2-8",
          platforms = "PC",
@@ -153,7 +153,7 @@ gamedata = [
 
     Game(id = 12,
          title = "The King of Peru 2001",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2001-5-22",
          platforms = "Windows,PC",
@@ -166,7 +166,7 @@ gamedata = [
     
     Game(id = 13,
          title = "Frogger Mambo",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2003",
          platforms = "Windows,PC",
@@ -179,7 +179,7 @@ gamedata = [
 
     Game(id = 14,
          title = "Dog Daze Revolution",
-         developer = "Twin Eagles Group",
+         developer = [2],
          publisher = None,
          release_date = "2004-4-1",
          platforms = "Windows,PC",
@@ -194,8 +194,8 @@ gamedata = [
 
     Game(id = 15,
          title = "Crazy Combi",
-         developer = "Inventarte.net",
-         publisher = None,
+         developer = [5],
+         publisher = [5],
          release_date = "2009-6-24",
          platforms = "Facebook",
          technologies = "Flash",
@@ -207,8 +207,8 @@ gamedata = [
 
     Game(id = 16,
          title = "1814: La Rebelion del Cusco",
-         developer = "Grupo Avatar PUCP",
-         publisher = None,
+         developer = [6],
+         publisher = [6],
          release_date = "2012",
          platforms = None,
          technologies = None,

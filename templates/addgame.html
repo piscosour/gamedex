@@ -2,31 +2,49 @@
 {% block title %}Add Game{% endblock title %}
 {% block content %}
 <h1>Add Game to Index</h1>
-
 <form action="/addgame" method="POST">
-<p>Title: <input type="text" name="title"></p>
-<p>Developer: <input type="text" name="developer"></p>
-<p>Publisher: <input type="text" name="publisher"></p>
-<p>Release Date (YYYY-MM-DD): <input type="text" name="release_date"></p>
-<p>Platform(s): <select size="5" name="platforms" multiple="yes">
+<fieldset>
+<div class="row">
+<div class="span4">
+<label>Title</label><input type="text" name="title">
+<label>Developer</label><select size="5" name="developer" multiple="yes">
+                {% for org in orgs %}
+                    <option value="{{ org.id }}">{{ org.name }}</option>
+                {% endfor %}
+                </select>
+<label>Publisher</label><select size="5" name="publisher" multiple="yes">
+                {% for org in orgs %}
+                    <option value="{{ org.id }}">{{ org.name }}</option>
+                {% endfor %}
+                </select>
+<label>Release Date (YYYY-MM-DD)</label><input type="text" name="release_date">
+</div>
+<div class="span4">
+<label>Platform(s)</label><select size="5" name="platforms" multiple="yes">
                 {% for platform in platforms %}
-                    <option value="{{ platform }}">{{ platform }}</options></p>
-                {% endfor %}</select></p>
-<p>Technology(ies): <select size="5" name="technologies" multiple="yes">
+                    <option value="{{ platform }}">{{ platform }}</option></p>
+                {% endfor %}</select>
+<label>Technology(ies)</label><select size="5" name="technologies" multiple="yes">
                     {% for tech in techs %}
-                        <option value="{{ tech }}">{{ tech }}</options></p>
-                    {% endfor %}</select></p>
-<p>Genre: <input type="text" name="genre"></p>
-<p>Development Time: <input type="text" name="dev_time"></p>
-<p>Distribution: <select size="5" multiple="yes" name="distribution">
+                        <option value="{{ tech }}">{{ tech }}</option></p>
+                    {% endfor %}</select>
+<label>Genre</label><input type="text" name="genre">
+<label>Development Time (in months)</label><input type="text" name="dev_time">
+</div>
+<div class="span4">
+<label>Distribution</label><select size="5" multiple="yes" name="distribution">
                  {% for dist in dist_options %}
-                     <option value="{{ dist }}">{{ dist }}</options></p>
-                 {% endfor %}</select></p>
-<p>URL: <input type="text" name="url"></p>
-<p>Category: <select size="5" name="category" multiple="yes">
+                     <option value="{{ dist }}">{{ dist }}</option></p>
+                 {% endfor %}</select>
+<label>URL</label><input type="text" name="url">
+<label>Category</label><select size="5" name="category" multiple="yes">
              {% for category in categories %}
-                 <option value="{{ category }}">{{ category }}</options></p>
-             {% endfor %}</select></p>
-<p><input type="submit" class="btn"></p>
+                 <option value="{{ category }}">{{ category }}</option></p>
+             {% endfor %}</select><br />
+<button type="submit" class="btn">Add Game</button>
+</fieldset>
+</div>
+</div>
 </form>
+
 {% endblock content %}

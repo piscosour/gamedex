@@ -8,15 +8,20 @@
 <table class="table">
     <tr>
         <td>Developer</td>
-        <td>{% for org in selection.developer %}
-                {{ org.name }}
+        <td>{% for org in org_data %}
+                {% if org.id == selection.developer[0] %}
+                    <a href="/org/{{ org.id }}">{{ org.name }}</a>
+                {% endif %}
             {% endfor %}</td>
     </tr>
     <tr>
         <td>Publisher</td>
-        <td>{% for org in selection.publisher %}
-                {{ org.name }}
-            {% endfor %}</td>    </tr>
+        <td>{% for org in org_data %}
+                {% if org.id == selection.publisher[0] %}
+                    <a href="/org/{{ org.id }}">{{ org.name }}</a>
+                {% endif %}
+            {% endfor %}</td>
+    </tr>
     <tr>
         <td>Release Date</td>
         <td>{{ selection.release_date }}</td>
@@ -104,5 +109,5 @@
     </div>
 </div>
 </div>
-<p><a href="/gamelist">Return to Game Index</a></p>
+<p><a href="/gameindex">Return to Game Index</a></p>
 {% endblock content %}

@@ -11,6 +11,7 @@ import gameclasses
 import operations
 import users
 from gamelist import gamedata
+from orglist import orgdata
 
 ## Initialise Flask app
 
@@ -42,11 +43,9 @@ def logout():
 
 ## Render the full list of games in the DB. Requires templating to iterate.
 
-@app.route("/gamelist")
+@app.route("/gameindex")
 def show_game_list():
-    global gamedata
-    gen_game_data = operations.gen_game_index(gamedata)
-    return render_template("gamelist.html", game_data=gen_game_data, total=len(gamedata))
+    return render_template("gameindex.html", auth=user_authenticate, game_data=gamedata, total=len(gamedata))
 
 ## Individual game info render.
 
@@ -56,9 +55,10 @@ def show_game(game_id):
     for game in gamedata:
         if game_id == game.id:
             if len(game.notes) > 0:
-                return render_template("game.html", selection=game, notes=True)
+                note_check = True
             else:
-                return render_template("game.html", selection=game, notes=False)
+                note_check = False
+            return render_template("game.html", selection=game, notes=note_check, org_data=orgdata, auth=user_authenticate)
     else:
         return "Game not found!"    
 
@@ -73,7 +73,7 @@ def addnote(game_id):
                 new_note = gameclasses.Note(body = request.form["note-body"],
                                             title = request.form["note-title"])
                 game.notes = game.notes + [new_note]
-                return render_template("game.html", selection=game, notes=True)
+                return render_template("game.html", selection=game, notes=True, auth=user_authenticate)
 
 ## Add game form
 
@@ -87,7 +87,7 @@ def add_game():
             return render_template("addgame.html", techs=gameclasses.technology_list, 
                                    platforms=gameclasses.platform_list,
                                    categories=gameclasses.game_cat_list,
-                                   dist_options=gameclasses.distribution_list)
+                                   dist_options=gameclasses.distribution_list, orgs=orgdata, auth=user_authenticate)
     elif request.method == "POST":
         new_game = gameclasses.Game(id = len(gamedata) + 1, 
                                     title = request.form["title"],
@@ -102,11 +102,39 @@ def add_game():
                                     url = request.form["url"], 
                                     game_category = request.form["category"])
         gamedata = gamedata + [new_game]
-        return render_template("add-game-confirmation.html", game=new_game)
+        return render_template("add-game-confirmation.html", game=new_game, auth=uder_authenticate)
+
+## Generate index of organisations
+
+@app.route("/orgindex")
+def show_org_list():
+    return render_template("orgindex.html", org_data=orgdata, auth=user_authenticate)
+
+## Individual org info render
+
+@app.route("/org/<int:org_id>")
+def show_org(org_id):
+    for org in orgdata:
+        if org_id == org.id:
+            if len(org.notes) > 0:
+                note_check = True
+            else:
+                note_check = False
+            if len(org.events) >0:
+                event_check = True
+            else:
+                event_check = False
+            return render_template("org.html", selection=org, notes=note_check,
+                                   game_data=gamedata, auth=user_authenticate,
+                                   events=event_check)
+    else:
+        return "Organisation not found!"    
+
+## About page
 
 @app.route("/about")
 def about_page():
-    return render_template("about.html")
+    return render_template("about.html", auth=user_authenticate)
 
 if __name__ == "__main__":
     app.debug = True

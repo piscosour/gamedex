@@ -31,12 +31,8 @@ class Game:
                  distribution=None, url=None, game_category=None):
         self.id = id
         self.title = title
-        if developer is not None:
-            self.developer = []
-            self.add_dev(developer)
-        if publisher is not None:
-            self.publisher = []
-            self.add_pub(publisher)
+        self.developer = developer
+        self.publisher = publisher
         self.release_date = release_date
         if platforms is not None:
             self.platforms = []
@@ -57,21 +53,19 @@ class Game:
 
     ## These functions are called independently so they can also be used to update content outside of init.
     
-    def add_dev(self, developer):
-        if developer is None:                   ## Are you giving me something?
+    def add_dev(self, org_id):
+        if org_id is None:                   ## Are you giving me something?
             raise ValueError("No Org specified.")
         elif self.developer is None:            ## Do I have something?
             self.developer = []
-        for element in developer.split(","):    ## Parse and add yours to mine.
-            self.developer = self.developer + [Org(element)]
-
-    def add_pub(self, publisher):
-        if publisher is None:
+        self.developer = self.developer + [org_id]
+        
+    def add_pub(self, org_id):
+        if org_id is None:
             raise ValueError("No publisher specified.")
         elif self.publisher is None:
             self.publisher = []
-        for element in publisher.split(","):
-            self.publisher = self.publisher + [Org(element)]
+        self.publisher = self.publisher + [org_id]
 
     def add_platform(self, platforms):
         if platforms is None:
@@ -128,8 +122,9 @@ class Org:
 
     """A Org or publisher of a game."""
 
-    def __init__(self, name, start_date=None, size=None, location=None,
+    def __init__(self, id, name, start_date=None, size=None, location=None,
                  end_date=None, url=None, email=None):
+        self.id = id
         self.name = name
         self.start_date = start_date
         self.end_date = end_date
@@ -161,6 +156,7 @@ class Note:
         self.body = body
         self.timestamp = datetime.datetime.now()
         self.timestamp_str = str(self.timestamp)
+        self.private = None
 
 ## Tracks milestones and events related to Orgs
 
@@ -171,3 +167,4 @@ class Event:
         self.text = text
         self.date = date
         self.category = category
+        self.private = None

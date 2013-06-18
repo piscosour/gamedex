@@ -15,7 +15,7 @@ def gen_game_index(data=gamedata):
     
     return game_index
 
-## Print game indexto screen
+## Print game index to screen
 
 def render_game_index(data):
     for game in data:

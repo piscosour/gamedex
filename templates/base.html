@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>{% block title %} {% endblock title %}</title>
+    <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
 </head>
 
@@ -9,8 +9,9 @@
   <div class="navbar-inner">
     <a class="brand" href="/">GameDex</a>
     <ul class="nav">
-      <li><a href="/gamelist">Index</a></li>
+      <li><a href="/gameindex">Game Index</a></li>
       {% if auth == True %}<li><a href="/addgame">Add Game</a></li>{% endif %}
+      <li><a href="/orgindex">Org Index</a></li>
       <li class="pull-right"><a href="/about">About</a></li>
     </ul>
   </div>

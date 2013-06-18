@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Organisation Index{% endblock title %}
+{% block content %}
+<h1>Organisation Index</h1>
+<p>Sort: A-Z | Date</p>
+<ul>
+{% for org in org_data %}
+    <li><a href="/org/{{ org.id }}">{{ org.name }}</a></li>
+{% endfor %}
+</ul>
+<p>{{ org_data|length }} total organisations in the index.</p>
+{% endblock content %}
