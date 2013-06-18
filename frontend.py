@@ -15,25 +15,30 @@ from gamelist import gamedata
 ## Initialise Flask app
 
 app = Flask(__name__)
+user_authenticate = False
+password = "password"
 
 ## Front Page
 
 @app.route("/")
 def show_front():
-    return render_template("index.html")
+    return render_template("index.html", auth=user_authenticate, message=None)
 
 @app.route("/login", methods=["POST"])
 def login():
+    global user_authenticate
     if request.method == "POST":
-        if request.form["user"] in users.user_list:
-            if request.form["password"]  == users.user_list[request.form["user"]]:
-                user_authenticate = True
-                return "Login successful!"
-            else:
-                return "Password incorrect."
+        if request.form["password"] == password:
+            user_authenticate = True
+            return render_template("index.html", auth=user_authenticate, message=None)
         else:
-            return "User not in database."
-            
+            return render_template("index.html", auth=user_authenticate, message="Password incorrect.")
+    
+@app.route("/logout")
+def logout():
+    global user_authenticate
+    user_authenticate = False
+    return render_template("index.html", auth=user_authenticate, message="Session closed.")
 
 ## Render the full list of games in the DB. Requires templating to iterate.
 
@@ -76,10 +81,13 @@ def addnote(game_id):
 def add_game():
     global gamedata
     if request.method == "GET":
-        return render_template("addgame.html", techs=gameclasses.technology_list, 
-                               platforms=gameclasses.platform_list,
-                               categories=gameclasses.game_cat_list,
-                               dist_options=gameclasses.distribution_list)
+        if user_authenticate is not True:
+            return render_template("index.html", auth=user_authenticate, message="You need to log in to add games.")
+        else:
+            return render_template("addgame.html", techs=gameclasses.technology_list, 
+                                   platforms=gameclasses.platform_list,
+                                   categories=gameclasses.game_cat_list,
+                                   dist_options=gameclasses.distribution_list)
     elif request.method == "POST":
         new_game = gameclasses.Game(id = len(gamedata) + 1, 
                                     title = request.form["title"],

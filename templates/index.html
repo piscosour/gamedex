@@ -9,15 +9,21 @@
 <p><a href="https://github.com/piscosour/gamedex">View source on GitHub</a></p>
 </div>
 <div class="span6">
-    <form action="/login" method="POST">
-        <fieldset>
-            <legend>Login</legend>
-            <label>Username</label>
-            <input type="text" name="user">
-            <label>Password</label>
+    {% if auth == False %}
+        <form action="/login" method="POST" class="form-inline">
+            <h3>Login</h3>
+            <label>Password: </label>
             <input type="password" name="password">
             <button type="submit" class="btn btn-small">Login</button>
-        </fieldset>
-    </form>
+        </form>
+        {% if message is not none %}
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% else %}
+        <h2>Welcome!</h2>
+        <p><a href="/logout">Close session</a></p>
+    {% endif %}
 </div>
 {% endblock content %}
