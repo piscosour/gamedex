@@ -2,7 +2,10 @@
 {% block title %}Game Info: {{selection.title }}{% endblock title %}
 {% block content %}
 <h1>{{ selection.title }}</h1>
-<div name="game-info"><table>
+<div class="row">
+<div name="game-info" class="span6">
+<h2>Game Info</h2>
+<table class="table">
     <tr>
         <td>Developer</td>
         <td>{% for org in selection.developer %}
@@ -71,7 +74,8 @@
             {% endif %}</td>
     </tr>
 </table>
-<div name="game-notes">
+</div>
+<div name="game-notes" class="span5 offset1">
     <h2>Notes</h2>
     {% if notes == True %}
         {% for note in selection.notes %}
@@ -80,14 +84,19 @@
     {% else %}
         <p>There are no notes for this game.</p>
     {% endif %}
-    <p><a href="#">Add Note</a></p>
-        <div name="add-note-form">
-            <form method="POST" action="/game/{{ selection.id }}/addnote">
-                <p>Title: <input type="text" name="note-title"></p>
-                <p>Note: <input type="text" name="note-body"></p>
-                <input type="submit">
-            </form>
-        </div>
+    <div name="add-note-form">
+        <fieldset>
+        <form method="POST" action="/game/{{ selection.id }}/addnote">
+            <legend>Add Note</legend>
+            <label>Title</label>
+            <input type="text" name="note-title"></p>
+            <labelNote</label>
+            <textarea rows="5" name="note-body"></textarea></p>
+            <button type="submit" class="btn btn-small">Add Note</button>
+        </form>
+        </fieldset>
+    </div>
+</div>
 </div>
 <p><a href="/gamelist">Return to Game Index</a></p>
 {% endblock content %}
