@@ -116,6 +116,9 @@ class Game:
             else:
                 raise ValueError("Distribution method not on methods list.")
 
+    def add_note(self, note):
+        self.notes = self.notes + [note]
+
 ## Using Org class for both Orgs and publishers. Maybe rename to Org?
 
 ## Also - add class for individuals, for detailed team lists working on games?

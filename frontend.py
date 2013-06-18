@@ -33,7 +33,10 @@ def show_game(game_id):
     global gamedata
     for game in gamedata:
         if game_id == game.id:
-            return render_template("game.html", selection=game)
+            if len(game.notes) > 0:
+                return render_template("game.html", selection=game, notes=True)
+            else:
+                return render_template("game.html", selection=game, notes=False)
     else:
         return "Game not found!"    
 

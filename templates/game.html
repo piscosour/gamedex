@@ -47,7 +47,13 @@
     </tr>
     <tr>
         <td>Distribution</td>
-        <td>{{ selection.distribution }}</td>
+        <td>{% if selection.distribution == None %}
+                N/A
+            {% else %}
+                {% for dist in selection.distribution %}
+                    {{ dist }}<br />
+                {% endfor %}</a>
+            {% endif %}</td>
     </tr>
     <tr>
         <td>URL</td>
@@ -68,7 +74,24 @@
             {% endif %}</td>
     </tr>
 </table>
-
+<div>
+<h2>Notes</h2>
+{% if notes == True %}
+    {% for note in selection.notes %}
+        <p>{{ note }}</p>
+    {% endfor %}
+{% else %}
+    <p>There are no notes for this game.</p>
+{% endif %}
+<p><a href="#">Add Note</a></p>
+    <div name="add-note-form">
+        <form method="POST" action="/game/{{ selection.id }}/addnote">
+            <p>Title: <input type="text" name="title"></p>
+            <p>Note: <input type="text" name="note-text"></p>
+            <input type="submit">
+        </form>
+    </div>
+</div>
 <p><a href="/gamelist">Return to Game List</a></p>
 
 </body>
