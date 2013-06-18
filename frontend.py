@@ -40,6 +40,15 @@ def show_game(game_id):
     else:
         return "Game not found!"    
 
+@app.route("/game/<int:game_id>/addnote", methods=["POST"])
+def addnote(game_id):
+    global gamedata
+    if request.method == "POST":
+        for game in gamedata:
+            if game_id == game.id:
+                game.notes = game.notes + [request.form["note-text"]]
+                return render_template("game.html", selection=game, notes=True)
+
 ## Add game form
 
 @app.route("/addgame", methods=["GET", "POST"])
