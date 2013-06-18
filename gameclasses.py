@@ -141,6 +141,14 @@ class Org:
             self.status = "Active"
         else:
             self.status = "Inactive"
+        self.notes = []
+        self.events = []
+
+    def add_note(self, note):
+        self.notes = self.notes + [note]
+
+    def add_event(self, event):
+        self.events = self.events + [event]
 
 ## For adding ongoing notes to either Games or Orgs, with title, body and timestamp.
 
@@ -153,4 +161,13 @@ class Note:
         self.body = body
         self.timestamp = datetime.datetime.now()
         self.timestamp_str = str(self.timestamp)
-    
+
+## Tracks milestones and events related to Orgs
+
+class Event:
+    """An event in an organisation's history."""
+
+    def __init__(self, text, date, category):
+        self.text = text
+        self.date = date
+        self.category = category

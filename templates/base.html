@@ -10,7 +10,7 @@
     <a class="brand" href="/">GameDex</a>
     <ul class="nav">
       <li><a href="/gamelist">Index</a></li>
-      <li><a href="/addgame">Add Game</a></li>
+      {% if auth == True %}<li><a href="/addgame">Add Game</a></li>{% endif %}
       <li class="pull-right"><a href="/about">About</a></li>
     </ul>
   </div>

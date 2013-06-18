@@ -2,5 +2,3 @@
 *.pyc
 
 .DS_Store
-userinput.py
-users.py
