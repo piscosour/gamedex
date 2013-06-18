@@ -6,9 +6,12 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+
 import gameclasses
-from gamelist import gamedata
 import operations
+from gamelist import gamedata
+
+## Initialise Flask app
 
 app = Flask(__name__)
 
@@ -39,6 +42,8 @@ def show_game(game_id):
                 return render_template("game.html", selection=game, notes=False)
     else:
         return "Game not found!"    
+
+## POST function for adding notes (updates page after add)
 
 @app.route("/game/<int:game_id>/addnote", methods=["POST"])
 def addnote(game_id):
