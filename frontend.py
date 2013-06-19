@@ -16,7 +16,7 @@ from orglist import orgdata
 ## Initialise Flask app
 
 app = Flask(__name__)
-user_authenticate = False
+user_authenticate = True
 password = "password"
 
 ## Front Page
@@ -129,6 +129,30 @@ def show_org(org_id):
                                    events=event_check)
     else:
         return "Organisation not found!"    
+
+@app.route("/addorg", methods=["GET", "POST"])
+def add_org():
+    global orgdata
+    if request.method == "GET":
+        if user_authenticate is not True:
+            return render_template("index.html", auth=user_authenticate, message="You need to log in to add orgs.")
+        else:
+            return render_template("addorg.html", orgs=orgdata, auth=user_authenticate)
+    elif request.method == "POST":
+        if request.form["end_date"] == "":
+            end_date_check = None
+        else:
+            end_date_check = request.form["end_date"] 
+        new_org = gameclasses.Org(id = len(gamedata) + 1, 
+                                  name = request.form["name"],
+                                  start_date = request.form["start_date"], 
+                                  end_date = end_date_check, 
+                                  size = request.form["size"], 
+                                  location = request.form["location"], 
+                                  url = request.form["url"], 
+                                  email = request.form["email"])
+        orgdata = orgdata + [new_org]
+        return render_template("add-org-confirmation.html", org=new_org, auth=user_authenticate)
 
 ## About page
 

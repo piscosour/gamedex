@@ -5,7 +5,7 @@
 <p>Sort: A-Z | Date</p>
 <ul>
 {% for game in game_data %}
-    <li><a href="/game/{{ game.id }}">{{ (game.title) }}</a> ({{ game.release_date[:4] }})</li>
+    <li><a href="/game/{{ game.id }}">{{ (game.title) }}</a>{% if not game.release_date == None %} ({{ game.release_date[:4] }}){% endif %}</li>
 {% endfor %}
 </ul>
 <p>{{ total }} total games in the index.</p>

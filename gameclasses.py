@@ -12,7 +12,8 @@ import datetime
 platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
                  "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga",
                  "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast",
-                 "Windows", "Atari 2600", "Facebook", "Web"]
+                 "Windows", "Atari 2600", "Facebook", "Web",
+                 "iOS", "Android", "Windows Phone"]
 distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Xbox Live", "Playstation Network",
                      "Freeware", "Social"]
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",

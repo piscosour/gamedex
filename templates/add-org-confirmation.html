@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Success!{% endblock title %}
+{% block content %}
+<h1>{{ org.name }} added to database!</h1>
+
+<p>Start Date: {{ org.start_date }}</p>
+<p>End Date: {{ org.end_date }}</p>
+<p>Size: {{ org.size }}</p>
+<p>Location: {{ org.location }}</p>
+<p>URL{{ org.url }}</p>
+<p>E-Mail: {{ org.email }}</p>
+<p>Status: {{ org.status }}</p>
+<br />
+
+<p><a href="/orgindex">Return to Organisation Index</a></p>
+{% endblock content %}
