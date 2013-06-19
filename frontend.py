@@ -9,7 +9,6 @@ from flask import request
 
 import gameclasses
 import operations
-import users
 from gamelist import gamedata
 from orglist import orgdata
 

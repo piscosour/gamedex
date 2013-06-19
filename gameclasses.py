@@ -9,18 +9,23 @@
 
 import datetime
 
-platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
-                 "GCN", "NDS", "WII", "GB", "GBC", "GBA", "C64", "Amiga",
-                 "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast",
-                 "Windows", "Atari 2600", "Facebook", "Web",
-                 "iOS", "Android", "Windows Phone"]
-distribution_list = ["Retail", "Digital", "Steam", "iTunes", "Web", "Xbox Live", "Playstation Network",
-                     "Freeware", "Social", "Google Play"]
-technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
-                   "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
-game_cat_list = ["Mobile", "Console", "Casual", "Text", "Web", "ARG", "Mod", "Hack", "Commercial",
-                 "Advergame", "Newsgame", "Serious", "Learning", "Conversion", "Noncommercial",
-                 "Localized", "Remake", "Social"]
+platform_list = {1:"PC", 2:"Mac", 3:"PSX", 4:"PS2", 5:"PS3", 6:"NES",
+                 7:"SNES", 8:"N64", 9:"GCN", 10:"NDS", 11:"WII", 12:"GB",
+                 13:"GBC", 14:"GBA", 15:"C64", 16:"Amiga", 17:"Xbox",
+                 18:"Xbox 360", 19:"Genesis", 20:"Saturn", 21:"Dreamcast",
+                 22:"Windows", 23:"Atari 2600", 24:"Facebook", 25:"Web",
+                 26:"iOS", 27:"Android", 28:"Windows Phone"}
+distribution_list = {1:"Retail", 2:"Digital", 3:"Steam", 4:"iTunes", 5:"Web",
+                     6:"Xbox Live", 7:"Playstation Network", 8:"Freeware",
+                     9:"Social", 10:"Google Play"}
+technology_list = {1:"Unity", 2:"GameMaker", 3:"RPGMaker", 4:"Assembly",
+                   5:"C/C++", 6:"BASIC", 7:"Cloud Computing", 8:"Python",
+                   9:"Javascript", 10:"HTML5", 11:"Flash", 12:"Konstruct",
+                   13:"Custom"}
+game_cat_list = {1:"Mobile", 2:"Console", 3:"Casual", 4:"Text", 5:"Web",
+                 6:"ARG", 7:"Mod", 8:"Hack", 9:"Commercial", 10:"Advergame",
+                 11:"Newsgame", 12:"Serious", 13:"Learning", 14:"Conversion",
+                 15:"Noncommercial", 16:"Localized", 17:"Remake", 18:"Social"}
 
 
 class Game:
@@ -74,7 +79,7 @@ class Game:
         elif self.platforms is None:
             self.platforms = []
         for element in platforms.split(","):
-            if element in platform_list:
+            if element in platform_list.values():
                 self.platforms = self.platforms + [element]
             else:
                 raise ValueError("Platform not on platforms list.")
@@ -85,7 +90,7 @@ class Game:
         elif self.technologies is None:
             self.technologies = []
         for element in technologies.split(","):
-            if element in technology_list:
+            if element in technology_list.values():
                 self.technologies = self.technologies + [element]
             else:
                 raise ValueError("Technology not on technologies list.")
@@ -96,7 +101,7 @@ class Game:
         elif self.game_category is None:
             self.game_category = []
         for element in game_category.split(","):
-            if element in game_cat_list:
+            if element in game_cat_list.values():
                 self.game_category = self.game_category + [element]
             else:
                 raise ValueError("Category not on categories list.")
@@ -107,7 +112,7 @@ class Game:
         elif self.distribution is None:
             self.distribution = []
         for element in dist_method.split(","):
-            if element in distribution_list:
+            if element in distribution_list.values():
                 self.distribution = self.distribution + [element]
             else:
                 raise ValueError("Distribution method not on methods list.")
