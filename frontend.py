@@ -57,7 +57,13 @@ def show_game(game_id):
                 note_check = True
             else:
                 note_check = False
-            return render_template("game.html", selection=game, notes=note_check, org_data=orgdata, auth=user_authenticate)
+            return render_template("game.html", selection=game,
+                                   notes=note_check, org_data=orgdata, 
+                                   auth=user_authenticate,
+                                   techs=gameclasses.technology_list, 
+                                   platforms=gameclasses.platform_list,
+                                   categories=gameclasses.game_cat_list,
+                                   dist_options=gameclasses.distribution_list)
     else:
         return "Game not found!"    
 
@@ -90,18 +96,18 @@ def add_game():
     elif request.method == "POST":
         new_game = gameclasses.Game(id = len(gamedata) + 1, 
                                     title = request.form["title"],
-                                    developer = request.form["developer"], 
-                                    publisher = request.form["publisher"], 
+                                    developer = request.form.getlist("developer"), 
+                                    publisher = request.form.getlist("publisher"), 
                                     release_date = request.form["release_date"], 
-                                    platforms = request.form["platforms"], 
-                                    technologies = request.form["technologies"], 
+                                    platforms = request.form.getlist("platforms"), 
+                                    technologies = request.form.getlist("technologies"), 
                                     genre = request.form["genre"], 
                                     dev_time = request.form["dev_time"], 
-                                    distribution = request.form["distribution"], 
+                                    distribution = request.form.getlist("distribution"), 
                                     url = request.form["url"], 
-                                    game_category = request.form["category"])
+                                    game_category = request.form.getlist("category"))
         gamedata = gamedata + [new_game]
-        return render_template("add-game-confirmation.html", game=new_game, auth=uder_authenticate)
+        return render_template("add-game-confirmation.html", game=new_game, auth=user_authenticate)
 
 ## Generate index of organisations
 

@@ -6,43 +6,43 @@
 <fieldset>
 <div class="row">
 <div class="span4">
-<label>Title</label><input type="text" name="title">
-<label>Developer</label><select size="5" name="developer" multiple="yes">
-                {% for org in orgs %}
-                    <option value="{{ org.id }}">{{ org.name }}</option>
-                {% endfor %}
-                </select>
-<label>Publisher</label><select size="5" name="publisher" multiple="yes">
-                {% for org in orgs %}
-                    <option value="{{ org.id }}">{{ org.name }}</option>
-                {% endfor %}
-                </select>
-<label>Release Date (YYYY-MM-DD)</label><input type="text" name="release_date">
+    <label>Title</label><input type="text" name="title">
+    <label>Developer</label><select size="5" name="developer" multiple="yes">
+                    {% for org in orgs %}
+                        <option value="{{ org.id }}">{{ org.name }}</option>
+                    {% endfor %}
+                    </select>
+    <label>Publisher</label><select size="5" name="publisher" multiple="yes">
+                    {% for org in orgs %}
+                        <option value="{{ org.id }}">{{ org.name }}</option>
+                    {% endfor %}
+                    </select>
+    <label>Release Date (YYYY-MM-DD)</label><input type="text" name="release_date">
 </div>
 <div class="span4">
-<label>Platform(s)</label><select size="5" name="platforms" multiple="yes">
-                {% for platform in platforms %}
-                    <option value="{{ platform }}">{{ platform }}</option></p>
-                {% endfor %}</select>
-<label>Technology(ies)</label><select size="5" name="technologies" multiple="yes">
-                    {% for tech in techs %}
-                        <option value="{{ tech }}">{{ tech }}</option></p>
+    <label>Platform(s)</label><select size="5" name="platforms" multiple="yes">
+                    {% for platform in platforms %}
+                        <option value="{{ platform }}">{{ platforms[platform] }}</option></p>
                     {% endfor %}</select>
-<label>Genre</label><input type="text" name="genre">
-<label>Development Time (in months)</label><input type="text" name="dev_time">
+    <label>Technology(ies)</label><select size="5" name="technologies" multiple="yes">
+                        {% for tech in techs %}
+                            <option value="{{ tech }}">{{ techs[tech] }}</option></p>
+                        {% endfor %}</select>
+    <label>Genre</label><input type="text" name="genre">
+    <label>Development Time (in months)</label><input type="text" name="dev_time">
 </div>
 <div class="span4">
-<label>Distribution</label><select size="5" multiple="yes" name="distribution">
-                 {% for dist in dist_options %}
-                     <option value="{{ dist }}">{{ dist }}</option></p>
-                 {% endfor %}</select>
-<label>URL</label><input type="text" name="url">
-<label>Category</label><select size="5" name="category" multiple="yes">
-             {% for category in categories %}
-                 <option value="{{ category }}">{{ category }}</option></p>
-             {% endfor %}</select><br />
-<button type="submit" class="btn">Add Game</button>
-</fieldset>
+    <label>Distribution</label><select size="5" multiple="yes" name="distribution">
+                     {% for dist in dist_options %}
+                         <option value="{{ dist }}">{{ dist_options[dist] }}</option></p>
+                     {% endfor %}</select>
+    <label>URL</label><input type="text" name="url">
+    <label>Category</label><select size="5" name="category" multiple="yes">
+                 {% for category in categories %}
+                     <option value="{{ category }}">{{ categories[category] }}</option></p>
+                 {% endfor %}</select><br />
+    <button type="submit" class="btn">Add Game</button>
+    </fieldset>
 </div>
 </div>
 </form>

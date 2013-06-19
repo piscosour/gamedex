@@ -29,13 +29,13 @@
     <tr>
         <td>Platform(s)</td>
         <td>{% for platform in selection.platforms %}
-                {{ platform }}<br />
+                {{ platforms[platform] }}<br />
             {% endfor %}</td>
     </tr>
     <tr>
         <td>Technologies</td>
         <td>{% for technology in selection.technologies %}
-                {{ technology }}<br />
+                {{ techs[technology] }}<br />
             {% endfor %}</td>
     </tr>
     <tr>
@@ -56,7 +56,7 @@
                 N/A
             {% else %}
                 {% for dist in selection.distribution %}
-                    {{ dist }}<br />
+                    {{ dist_options[dist] }}<br />
                 {% endfor %}</a>
             {% endif %}</td>
     </tr>
@@ -74,7 +74,7 @@
                 N/A
             {% else %}
                 {% for category in selection.game_category %}
-                    {{ category }}<br />
+                    {{ categories[category] }}<br />
                 {% endfor %}</a>
             {% endif %}</td>
     </tr>

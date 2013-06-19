@@ -40,20 +40,12 @@ class Game:
         self.developer = developer
         self.publisher = publisher
         self.release_date = release_date
-        if platforms is not None:
-            self.platforms = []
-            self.add_platform(platforms)
-        if technologies is not None:
-            self.technologies = []
-            self.add_technologies(technologies)
+        self.platforms = platforms
+        self.technologies = technologies
         self.genre = genre
         self.dev_time = dev_time 
-        if distribution is not None:
-            self.distribution = []
-            self.add_game_dist(distribution)
-        if game_category is not None:
-            self.game_category = []
-            self.add_game_cat(game_category)
+        self.distribution = distribution
+        self.game_category = game_category
         self.url = url
         self.notes = []
 
