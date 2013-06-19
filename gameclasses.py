@@ -14,8 +14,8 @@ platform_list = ["PC", "Mac", "PSX", "PS2", "PS3", "NES", "SNES", "N64",
                  "Xbox", "Xbox 360", "Genesis", "Saturn", "Dreamcast",
                  "Windows", "Atari 2600", "Facebook", "Web",
                  "iOS", "Android", "Windows Phone"]
-distribution_list = ["Retail", "Digital", "Steam", "ITMS", "Web", "Xbox Live", "Playstation Network",
-                     "Freeware", "Social"]
+distribution_list = ["Retail", "Digital", "Steam", "iTunes", "Web", "Xbox Live", "Playstation Network",
+                     "Freeware", "Social", "Google Play"]
 technology_list = ["Unity", "GameMaker", "RPGMaker", "Assembly", "C/C++", "BASIC",
                    "Cloud Computing", "Python", "Javascript", "HTML5", "Flash", "Konstruct"]
 game_cat_list = ["Mobile", "Console", "Casual", "Text", "Web", "ARG", "Mod", "Hack", "Commercial",
