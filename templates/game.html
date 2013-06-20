@@ -8,19 +8,23 @@
 <table class="table">
     <tr>
         <td>Developer</td>
-        <td>{% for org in org_data %}
-                {% if org.id == selection.developer[0] %}
-                    <a href="/org/{{ org.id }}">{{ org.name }}</a>
-                {% endif %}
-            {% endfor %}</td>
+        <td>{% if not selection.developer == None %}
+                {% for org in org_data %}
+                    {% if org.id == selection.developer[0] %}
+                        <a href="/org/{{ org.id }}">{{ org.name }}</a><br />
+                    {% endif %}
+                {% endfor %}
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Publisher</td>
-        <td>{% for org in org_data %}
-                {% if org.id == selection.publisher[0] %}
-                    <a href="/org/{{ org.id }}">{{ org.name }}</a>
-                {% endif %}
-            {% endfor %}</td>
+        <td>{% if not selection.developer == None %}
+                {% for org in org_data %}
+                    {% if org.id == selection.publisher[0] %}
+                        <a href="/org/{{ org.id }}">{{ org.name }}</a><br />
+                    {% endif %}
+                {% endfor %}
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Release Date</td>
@@ -28,15 +32,19 @@
     </tr>
     <tr>
         <td>Platform(s)</td>
-        <td>{% for platform in selection.platforms %}
-                {{ platforms[platform] }}<br />
-            {% endfor %}</td>
+        <td>{% if not selection.platforms == None %}
+                {% for platform in selection.platforms %}
+                    {{ platforms[platform] }}<br />
+                {% endfor %}
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Technologies</td>
-        <td>{% for technology in selection.technologies %}
-                {{ techs[technology] }}<br />
-            {% endfor %}</td>
+        <td>{% if not selection.technologies == None %}
+                {% for technology in selection.technologies %}
+                    {{ techs[technology] }}<br />
+                {% endfor %}
+            {% endif %}</td>
     </tr>
     <tr>
         <td>Genre</td>

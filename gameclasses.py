@@ -15,13 +15,16 @@ platform_list = {1:"PC", 2:"Mac", 3:"PSX", 4:"PS2", 5:"PS3", 6:"NES",
                  18:"Xbox 360", 19:"Genesis", 20:"Saturn", 21:"Dreamcast",
                  22:"Windows", 23:"Atari 2600", 24:"Facebook", 25:"Web",
                  26:"iOS", 27:"Android", 28:"Windows Phone"}
-distribution_list = {1:"Retail", 2:"Digital", 3:"Steam", 4:"iTunes", 5:"Web",
-                     6:"Xbox Live", 7:"Playstation Network", 8:"Freeware",
-                     9:"Social", 10:"Google Play"}
+
 technology_list = {1:"Unity", 2:"GameMaker", 3:"RPGMaker", 4:"Assembly",
                    5:"C/C++", 6:"BASIC", 7:"Cloud Computing", 8:"Python",
                    9:"Javascript", 10:"HTML5", 11:"Flash", 12:"Konstruct",
                    13:"Custom"}
+                 
+distribution_list = {1:"Retail", 2:"Digital", 3:"Steam", 4:"iTunes", 5:"Web",
+                     6:"Xbox Live", 7:"Playstation Network", 8:"Freeware",
+                     9:"Social", 10:"Google Play"}
+                     
 game_cat_list = {1:"Mobile", 2:"Console", 3:"Casual", 4:"Text", 5:"Web",
                  6:"ARG", 7:"Mod", 8:"Hack", 9:"Commercial", 10:"Advergame",
                  11:"Newsgame", 12:"Serious", 13:"Learning", 14:"Conversion",
