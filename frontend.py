@@ -92,7 +92,8 @@ def add_game():
             return render_template("addgame.html", techs=gameclasses.technology_list, 
                                    platforms=gameclasses.platform_list,
                                    categories=gameclasses.game_cat_list,
-                                   dist_options=gameclasses.distribution_list, orgs=orgdata, auth=user_authenticate)
+                                   dist_options=gameclasses.distribution_list,
+                                   orgs=orgdata, auth=user_authenticate)
     elif request.method == "POST":
         new_game = gameclasses.Game(id = len(gamedata) + 1, 
                                     title = request.form["title"],
@@ -107,7 +108,9 @@ def add_game():
                                     url = request.form["url"], 
                                     game_category = request.form.getlist("category"))
         gamedata = gamedata + [new_game]
-        return render_template("add-game-confirmation.html", game=new_game, auth=user_authenticate)
+        return render_template("game.html", selection=new_game, notes=False,
+                               message="Game added successfully!",
+                               auth=user_authenticate)
 
 ## Generate index of organisations
 
@@ -157,7 +160,10 @@ def add_org():
                                   url = request.form["url"], 
                                   email = request.form["email"])
         orgdata = orgdata + [new_org]
-        return render_template("add-org-confirmation.html", org=new_org, auth=user_authenticate)
+        return render_template("org.html", selection=new_org, notes=False,
+                               game_data=gamedata, auth=user_authenticate,
+                               message="Organisation added successfully!",
+                               events=False)
 
 ## About page
 

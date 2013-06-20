@@ -18,6 +18,15 @@
   </div>
 </div>
 <div class="container">
+{% if message is not none %}
+<div class="row">
+    <div class="span4 offset4">
+        <div class="alert alert-info">
+            {{ message }}
+        </div>
+    </div>
+</div>
+{% endif %}
     {% block content %}{% endblock content %}
 </div>
 </body>

@@ -16,11 +16,6 @@
             <input type="password" name="password">
             <button type="submit" class="btn btn-small">Login</button>
         </form>
-        {% if message is not none %}
-            <div class="alert alert-info">
-                {{ message }}
-            </div>
-        {% endif %}
     {% else %}
         <h2>Welcome!</h2>
         <p><a href="/logout">Close session</a></p>
