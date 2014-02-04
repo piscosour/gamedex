@@ -7,28 +7,30 @@
 
 <body>
 <div class="navbar">
-  <div class="navbar-inner">
-    <a class="brand" href="/">GameDex</a>
-    <ul class="nav">
-      <li><a href="/gameindex">Game Index</a></li>
-      {% if auth == True %}<li><a href="/addgame">Add Game</a></li>{% endif %}
-      <li><a href="/orgindex">Org Index</a></li>
-      {% if auth == True %}<li><a href="/addorg">Add Org</a></li>{% endif %}      
-      <li class="pull-right"><a href="/about">About</a></li>
-    </ul>
-  </div>
-</div>
-<div class="container">
-{% if message is defined %}
-<div class="row">
-    <div class="span4 offset4">
-        <div class="alert alert-info">
-            {{ message }}
-        </div>
+    <div class="navbar-inner">
+        <a class="brand" href="/">GameDex</a>
+        <ul class="nav">
+            <li><a href="/gameindex">Game Index</a></li>
+            {% if auth == True %}<li><a href="/addgame">Add Game</a></li>{% endif %}
+            <li><a href="/orgindex">Org Index</a></li>
+            {% if auth == True %}<li><a href="/addorg">Add Org</a></li>{% endif %}      
+            <li class="pull-right"><a href="/about">About</a></li>
+        </ul>
     </div>
 </div>
-{% endif %}
-    {% block content %}{% endblock content %}
-</div>
+
+<div class="container"> <!-- Open main container -->
+    {% if message is defined %}
+    <div class="row">
+        <div class="span4 offset4">
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+        {% block content %}{% endblock content %}
+
+</div> <!-- Close main container -->
 </body>
 </html>

@@ -3,22 +3,38 @@
 {% block content %}
 <h1>GameDex</h1>
 <div class="row">
-<div class="span6">
-<p><a href="/gameindex">Game Index</a></p>
-<p><a href="/addgame">Add Game to Index</a></p>
-<p><a href="https://github.com/piscosour/gamedex">View source on GitHub</a></p>
+    <div class="span10 offset1">
+        <h3>The Peruvian video game industry in a nutshell</h3>
+        <h2>{{ games }} <small>games developed by local studios</small></h2>
+        <h2>{{ orgs }} <small>organisations have been part of the industry's history</small></h2>
+        <!-- active orgs -->
+        <!-- oldest game -->
+        <!-- average dev time -->
+        <!-- number of people who work in the industry -->
+        <p>Based on information in the GameDex, compiled from public websites and documents made available by game studios.</p>
+    </div>
 </div>
-<div class="span6">
-    {% if auth == False %}
-        <form action="/login" method="POST" class="form-inline">
-            <h3>Login</h3>
-            <label>Password: </label>
-            <input type="password" name="password">
-            <button type="submit" class="btn btn-small">Login</button>
-        </form>
-    {% else %}
-        <h2>Welcome!</h2>
-        <p><a href="/logout">Close session</a></p>
-    {% endif %}
+
+<hr />
+
+<div class="row">
+    <div class="span6">
+        <p><a href="/gameindex">Game Index</a></p>
+        <p><a href="/addgame">Add Game to Index</a></p>
+        <p><a href="https://github.com/piscosour/gamedex">View source on GitHub</a></p>
+    </div>
+    <div class="span6">
+        {% if auth == False %}
+            <form action="/login" method="POST" class="form-inline">
+                <h3>Login</h3>
+                <label>Password: </label>
+                <input type="password" name="password">
+                <button type="submit" class="btn btn-small">Login</button>
+            </form>
+        {% else %}
+            <h2>Welcome!</h2>
+            <p><a href="/logout">Close session</a></p>
+        {% endif %}
+    </div>
 </div>
 {% endblock content %}
